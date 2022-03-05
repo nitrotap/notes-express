@@ -11,8 +11,6 @@ An express.js based note taking app deployed on heroku
 
 - [Installation](#Installation)
 - [Usage](#Usage)
-
-- [Tests](#Tests)
 - [Questions](#Questions)
 - [License](#License)
 
@@ -26,12 +24,6 @@ npm i
 
 ```
 node server.js
-```
-
-## Tests
-
-```
-npm test
 ```
 
 ## Questions
