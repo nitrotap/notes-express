@@ -9,3 +9,4 @@ router.get("/api/notes", (req, res) => {
     res.json(results)
 })
 
+module.exports = router;
