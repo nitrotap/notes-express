@@ -2,6 +2,7 @@ const fs = require("fs")
 const path = require("path")
 const notes = require("./db/db.json")
 
+
 const express = require('express');
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -21,9 +22,9 @@ app.post('/api/notes', (req, res) => {
     // validate incoming content 
     // write incoming note to file
     // console.log(req.body)
+    req.body.id = notes.length.toString()
     res.json(req.body)
     createNewNote(req.body, notes)
-
 })
 
 app.get("/notes", (req, res) => {
@@ -37,6 +38,8 @@ function createNewNote(body, notes) {
     fs.writeFileSync(path.join(__dirname, "./db/db.json"), JSON.stringify(notes), null, 2)
     // return body
 }
+
+
 
 
 
