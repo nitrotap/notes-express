@@ -4,7 +4,7 @@ const notes = require("./db/db.json")
 
 
 const express = require('express');
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 443;
 const app = express();
 
 // parse incoming string or array data
