@@ -13,6 +13,7 @@ An express.js based note taking app deployed on heroku
 
 - [Installation](#Installation)
 - [Usage](#Usage)
+- [Heroku](#Heroku)
 - [Questions](#Questions)
 - [License](#License)
 
@@ -27,6 +28,10 @@ npm i
 ```
 node server.js
 ```
+
+## Heroku
+
+[Link to Heroku](https://shielded-dusk-35952.herokuapp.com/)
 
 ## Questions
 

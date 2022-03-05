@@ -1,6 +1,6 @@
-const fs = require("fs")
-const path = require("path")
-const notes = require("./db/db.json")
+const fs = require('fs')
+const path = require('path')
+const notes = require('./db/db.json')
 
 
 const express = require('express');
@@ -27,7 +27,7 @@ app.post('/api/notes', (req, res) => {
 })
 
 // html routes
-app.get("/notes", (req, res) => {
+app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
 })
 
@@ -39,19 +39,9 @@ function createNewNote(body, notes) {
     // write to json
     console.log(body) // object with 2 properties, title and text
     notes.push(body)
-    fs.writeFileSync(path.join(__dirname, "./db/db.json"), JSON.stringify(notes), null, 2)
+    fs.writeFileSync(path.join(__dirname, './db/db.json'), JSON.stringify(notes), null, 2)
     // return body
 }
-
-
-
-
-
-
-// const htmlRoutes = require("./routes/htmlRoutes")
-// const apiRoutes = require("./routes/apiRoutes")
-// app.use("/api", apiRoutes)
-// app.use('/', htmlRoutes)
 
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`);
