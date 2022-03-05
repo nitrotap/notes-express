@@ -14,22 +14,26 @@ app.use(express.json());
 // provide file path for static resources
 app.use(express.static('public'));
 
+// api routes
 app.get('/api/notes', (req, res) => {
     res.json(notes)
 })
 
 app.post('/api/notes', (req, res) => {
-    // validate incoming content 
-    // write incoming note to file
-    // console.log(req.body)
+    // validate incoming content todo
     req.body.id = notes.length.toString()
     res.json(req.body)
     createNewNote(req.body, notes)
 })
 
+// html routes
 app.get("/notes", (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
 })
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 
 function createNewNote(body, notes) {
     // write to json
