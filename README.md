@@ -7,6 +7,8 @@ An express.js based note taking app deployed on heroku
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![badmath](https://img.shields.io/github/languages/top/nitrotap/notes-express)
 
+[Link to Heroku](https://shielded-dusk-35952.herokuapp.com/)
+
 ## Table of Contents
 
 - [Installation](#Installation)
