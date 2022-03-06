@@ -1,6 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 const notes = require('./db/db.json')
+let notes = require('./db/db.json')
+
 
 
 const express = require('express');
@@ -16,6 +18,7 @@ app.use(express.static('public'));
 
 // api routes
 app.get('/api/notes', (req, res) => {
+    console.log("fetching notes")
     res.json(notes)
 })
 
@@ -24,6 +27,23 @@ app.post('/api/notes', (req, res) => {
     req.body.id = notes.length.toString()
     res.json(req.body)
     createNewNote(req.body, notes)
+})
+
+app.delete('/api/notes/:id', (req, res) => {
+    console.log("deleting one note", req.params.id)
+    let currentNotes = notes
+    let filteredNotes = currentNotes.filter(note => note.id != req.params.id)
+    // console.log(filteredNotes)
+    fs.writeFileSync(path.join(__dirname, './db/db.json'), JSON.stringify(filteredNotes), null, 2)
+
+    console.log("note deleted", req.params.id)
+    console.log("new notes", filteredNotes)
+    res.json(filteredNotes)
+    notes = filteredNotes;
+
+    // error handling - sent an id that doesn't exist
+    // renderNoteList(filteredNotes)
+    // return filteredNotes
 })
 
 // html routes
