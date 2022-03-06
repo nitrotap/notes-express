@@ -1,6 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-const notes = require('./db/db.json')
 let notes = require('./db/db.json')
 
 
