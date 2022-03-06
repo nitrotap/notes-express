@@ -1,7 +1,9 @@
 const fs = require('fs')
 const path = require('path')
 let notes = require('./db/db.json')
+const { v4: uuidv4 } = require('uuid');
 
+// import { v4 as uuidv4 } from 'uuid';
 
 
 const express = require('express');
@@ -22,8 +24,9 @@ app.get('/api/notes', (req, res) => {
 })
 
 app.post('/api/notes', (req, res) => {
-    // validate incoming content todo
-    req.body.id = notes.length.toString()
+    // give the note a unique id
+    // req.body.id = notes.length.toString()
+    req.body.id = uuidv4();
     res.json(req.body)
     createNewNote(req.body, notes)
 })
