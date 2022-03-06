@@ -1,10 +1,8 @@
+// variable declarations
 const fs = require('fs')
 const path = require('path')
 let notes = require('./db/db.json')
 const { v4: uuidv4 } = require('uuid');
-
-// import { v4 as uuidv4 } from 'uuid';
-
 
 const express = require('express');
 const PORT = process.env.PORT || 3001;
@@ -42,19 +40,12 @@ app.delete('/api/notes/:id', (req, res) => {
     console.log("new notes", filteredNotes)
     res.json(filteredNotes)
     notes = filteredNotes;
-
-    // error handling - sent an id that doesn't exist
-    // renderNoteList(filteredNotes)
-    // return filteredNotes
 })
-
-
 
 // html routes
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
 })
-
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
 });
@@ -64,7 +55,6 @@ function createNewNote(body, notes) {
     console.log(body) // object with 2 properties, title and text
     notes.push(body)
     fs.writeFileSync(path.join(__dirname, './db/db.json'), JSON.stringify(notes), null, 2)
-    // return body
 }
 
 app.listen(PORT, () => {
