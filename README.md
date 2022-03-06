@@ -1,8 +1,8 @@
-# notes-express
+# Note Taker
 
 ## Description
 
-An express.js based note taking app deployed on heroku
+Note Taker uses the npm packages uuid and express to generate a randomly generated note id, saves those notes to a heroku-based server, and returns those notes no matter where you are or what device you're using.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![badmath](https://img.shields.io/github/languages/top/nitrotap/notes-express)
@@ -41,7 +41,7 @@ Please reach out to me on [GitHub](https://github.com/nitrotap) or by email at k
 
 MIT
 
-Copyright 2022 nitrotap
+Copyright 2022 nitrotap  
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
