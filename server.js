@@ -45,6 +45,8 @@ app.delete('/api/notes/:id', (req, res) => {
     // return filteredNotes
 })
 
+
+
 // html routes
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
