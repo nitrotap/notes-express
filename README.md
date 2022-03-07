@@ -14,6 +14,7 @@ Note Taker uses the npm packages uuid and express to generate a randomly generat
 - [Installation](#Installation)
 - [Usage](#Usage)
 - [Heroku](#Heroku)
+- [Screen Shots](#Screen-Shots)
 - [Questions](#Questions)
 - [License](#License)
 
@@ -32,6 +33,10 @@ node server.js
 ## Heroku
 
 [Link to Heroku](https://shielded-dusk-35952.herokuapp.com/)
+
+## Screen-Shots
+
+<img src="./public/assets/images/screen-shot.png" width="50%" height="50%">
 
 ## Questions
 
